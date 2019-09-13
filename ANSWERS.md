@@ -1,0 +1,8 @@
+- [ ] Explain the difference between `Relational Databases` and `SQL`.
+      -A database is a collection of data organized for retrieval and manipulation. SQL stands for Structured Query Language which allows to interact with a database.
+- [ ] Why do tables need a `primary key`?
+      -Primary keys are needed so each entry has a unique identifier regardless if the entry itself is unique. This is so ensure, the database can be access faster via indexing the primary key.
+- [ ] What is the name given to a table column that references the primary key on another table.
+      -Foreign Keys
+- [ ] What do we need in order to have a _many to many_ relationship between two tables.
+      -We need another table which contains the foreign keys for other two tables.
