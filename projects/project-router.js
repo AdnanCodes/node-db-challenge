@@ -22,4 +22,12 @@ router.get("/tasks", (req, res) => {
     .catch(error => res.status(500).json({ error: error }));
 });
 
+router.post("/:id/tasks", (req, res) => {
+  Projects.addTask(req.body, req.params.id)
+    .then(tasks => {
+      res.status(201).json(tasks);
+    })
+    .catch(error => res.status(500).json(error));
+});
+
 module.exports = router;
