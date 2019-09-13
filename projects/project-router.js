@@ -30,4 +30,20 @@ router.post("/:id/tasks", (req, res) => {
     .catch(error => res.status(500).json(error));
 });
 
+router.get("/resources", (req, res) => {
+  Projects.getResources()
+    .then(resources => {
+      res.status(200).json(resources);
+    })
+    .catch(error => res.status(500).json({ error: error }));
+});
+
+router.post("/resources", (req, res) => {
+  Projects.addResource(req.body)
+    .then(added => {
+      res.status(201).json(added);
+    })
+    .catch(error => res.status(500).json(error));
+});
+
 module.exports = router;

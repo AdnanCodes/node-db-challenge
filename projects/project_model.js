@@ -37,7 +37,9 @@ function addResource(resource) {
   return db("resources")
     .insert(resource)
     .then(added => {
-      return added[0];
+      return db("resources")
+        .where({ id: added[0] })
+        .first();
     });
 }
 
